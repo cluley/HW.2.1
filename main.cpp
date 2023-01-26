@@ -15,59 +15,62 @@ enum class months {
 	december
 };
 
+void print(months month) {
+	switch (month) {
+	case months::january:
+		std::cout << "january" << std::endl;
+		break;
+	case months::february:
+		std::cout << "february" << std::endl;
+		break;
+	case months::march:
+		std::cout << "march" << std::endl;
+		break;
+	case months::april:
+		std::cout << "april" << std::endl;
+		break;
+	case months::may:
+		std::cout << "may" << std::endl;
+		break;
+	case months::june:
+		std::cout << "june" << std::endl;
+		break;
+	case months::july:
+		std::cout << "july" << std::endl;
+		break;
+	case months::august:
+		std::cout << "august" << std::endl;
+		break;
+	case months::september:
+		std::cout << "september" << std::endl;
+		break;
+	case months::october:
+		std::cout << "october" << std::endl;
+		break;
+	case months::november:
+		std::cout << "november" << std::endl;
+		break;
+	case months::december:
+		std::cout << "december" << std::endl;
+		break;
+	default:
+		break;
+	}
+}
+
 int main(int argc, char** argv) {
-	int val = 13;
-	setlocale(LC_ALL, "Russian");
+	int month = 13;
 
 	do {
 		std::cout << "Enter month's number: ";
-		std::cin >> val;
-
-		switch (val) {
-		case 0: 
-			std::cout << "Good bye" << std::endl;
-			break;
-		case 1:
-			std::cout << "january" << std::endl;
-			break;
-		case 2:
-			std::cout << "february" << std::endl;
-			break;
-		case 3:
-			std::cout << "march" << std::endl;
-			break;
-		case 4:
-			std::cout << "april" << std::endl;
-			break;
-		case 5:
-			std::cout << "may" << std::endl;
-			break;
-		case 6:
-			std::cout << "june" << std::endl;
-			break;
-		case 7:
-			std::cout << "july" << std::endl;
-			break;
-		case 8:
-			std::cout << "august" << std::endl;
-			break;
-		case 9:
-			std::cout << "september" << std::endl;
-			break;
-		case 10:
-			std::cout << "october" << std::endl;
-			break;
-		case 11:
-			std::cout << "november" << std::endl;
-			break;
-		case 12:
-			std::cout << "december" << std::endl; 
-			break;
-		default:
+		std::cin >> month;
+		if (month < 0 || month > 12) {
 			std::cout << "Wrong number!" << std::endl;
-			break;
+			continue;
 		}
-	} while (val != 0);
+		print(static_cast<months>(month));
+		
+	} while (month != 0);
 
 	return 0;
 }
